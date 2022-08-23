@@ -1,8 +1,18 @@
+import { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
+import { getProducts } from "../helpers/getProducts";
 
 const Home: NextPage = () => {
+  const [data, setData]: any = useState();
+
+  useEffect(() => {
+    getProducts(setData);
+  }, [getProducts, setData]);
+
+  console.log(data);
+
   return (
     <div className={styles.container}>
       <Head>
