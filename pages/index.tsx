@@ -2,24 +2,24 @@ import styles from "../styles/Home.module.scss";
 
 import type { NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
-import { getProducts } from "../helpers/dataFetchers";
+import { AppContext } from "../context/app-state";
+import { getAllProducts } from "../helpers/dataFetchers";
 
 import Head from "next/head";
 import ErrorComp from "../components/ErrorComp/ErrorComp";
 import Loading from "../components/Loading/Loading";
-import { AppContext } from "../context/app-state";
+import HomeComp from "../components/HomeComp/HomeComp";
+import Nav from "../components/Nav/Nav";
 
 const Home: NextPage = () => {
   const context = useContext(AppContext);
-  const { error, setError, loading, setLoading, data, setData } = context;
+  const { error, setError, loading, setLoading, setData } = context;
 
   useEffect(() => {
     setLoading(true);
-    getProducts(setData, setError);
+    getAllProducts(setData, setError);
     setLoading(false);
   }, [setData, setError, setLoading]);
-
-  console.log(data);
 
   return (
     <div className={styles.container}>
@@ -29,9 +29,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Nav />
+
       <main className={styles.main}>
         {error && <ErrorComp />}
         {loading && <Loading />}
+        <HomeComp />
       </main>
 
       <footer className={styles.footer}></footer>
