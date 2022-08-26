@@ -3,8 +3,8 @@ import Category from "../Category/Category";
 
 const HomeComp = () => {
   const categorySlugs = [
-    "headphones",
     "speakers",
+    "headphones",
     "midi-keyboards",
     "laptops",
     "computers",
