@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../context/app-state";
-
+import React from "react";
 import Category from "../Category/Category";
 
 const HomeComp = () => {
