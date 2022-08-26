@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+import { Categories } from "../helpers/types";
 
 // Global State Variables
 let error: boolean = false;
@@ -11,6 +12,10 @@ let user: string | undefined;
 let setUser: React.Dispatch<
   React.SetStateAction<string | undefined>
 > = () => {};
+let currentCategory: string = "";
+let setCurrentCategory: React.Dispatch<
+  React.SetStateAction<Categories>
+> = () => {};
 
 //  The Global Context
 export const AppContext = createContext({
@@ -22,6 +27,8 @@ export const AppContext = createContext({
   setData,
   user,
   setUser,
+  currentCategory,
+  setCurrentCategory,
 });
 
 // The Context Setup with useState
@@ -30,6 +37,8 @@ export default function AppState(props: any) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<any>();
   const [user, setUser] = useState<string | undefined>();
+  const [currentCategory, setCurrentCategory] =
+    useState<Categories>("speakers");
 
   return (
     <AppContext.Provider
@@ -42,6 +51,8 @@ export default function AppState(props: any) {
         setData,
         user,
         setUser,
+        currentCategory,
+        setCurrentCategory,
       }}
     >
       {props.children}

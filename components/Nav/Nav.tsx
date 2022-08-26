@@ -9,15 +9,6 @@ const Nav = () => {
   return (
     <nav className={styles.container}>
       <p className={styles.logo}>Audiophile</p>
-      <div>
-        {!user ? (
-          <i className="fa-solid fa-user"></i>
-        ) : (
-          <div>
-            <i className="fa-solid fa-cart-shopping"></i>
-          </div>
-        )}
-      </div>
     </nav>
   );
 };

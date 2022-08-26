@@ -11,6 +11,7 @@ import Loading from "../components/Loading/Loading";
 import HomeComp from "../components/HomeComp/HomeComp";
 import Nav from "../components/Nav/Nav";
 import Script from "next/script";
+import CategoryMenu from "../components/CategoryMenu/CategoryMenu";
 
 const Home: NextPage = () => {
   const context = useContext(AppContext);
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
       />
 
       <Nav />
-
+      <CategoryMenu />
       <main className={styles.main}>
         {error && <ErrorComp />}
         {loading && <Loading />}
