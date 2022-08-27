@@ -10,13 +10,12 @@ interface Props {
 const Category = ({ slug }: Props) => {
   const context = useContext(AppContext);
   const { data } = context;
-  const filteredData = data?.data?.filter(
+  
+  const filteredData: any = data?.data?.filter(
     (info: any): any => info.categories[0].slug === slug
   );
 
   const displayText = slug.replace("-", " ").toUpperCase();
-
-  console.log(filteredData);
 
   return (
     <section className={styles.container} id={slug}>
