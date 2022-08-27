@@ -1,14 +1,10 @@
 import React from "react";
+import { categorySlugs } from "../../helpers/variables";
+
 import Category from "../Category/Category";
 
+
 const HomeComp = () => {
-  const categorySlugs = [
-    "speakers",
-    "headphones",
-    "midi-keyboards",
-    "laptops",
-    "computers",
-  ];
 
   return (
     <div>

@@ -16,6 +16,8 @@ let currentCategory: string = "";
 let setCurrentCategory: React.Dispatch<
   React.SetStateAction<Categories>
 > = () => {};
+let mobileMenu: boolean = false;
+let setMobileMenu: React.Dispatch<React.SetStateAction<boolean>> = () => {};
 
 //  The Global Context
 export const AppContext = createContext({
@@ -29,6 +31,8 @@ export const AppContext = createContext({
   setUser,
   currentCategory,
   setCurrentCategory,
+  mobileMenu,
+  setMobileMenu
 });
 
 // The Context Setup with useState
@@ -39,6 +43,7 @@ export default function AppState(props: any) {
   const [user, setUser] = useState<string | undefined>();
   const [currentCategory, setCurrentCategory] =
     useState<Categories>("speakers");
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
     <AppContext.Provider
@@ -53,6 +58,8 @@ export default function AppState(props: any) {
         setUser,
         currentCategory,
         setCurrentCategory,
+        mobileMenu,
+        setMobileMenu
       }}
     >
       {props.children}

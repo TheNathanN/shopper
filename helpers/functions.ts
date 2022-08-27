@@ -1,0 +1,1 @@
+export const formatSlug = (slug: string) => slug.replace("-", " ").toUpperCase();

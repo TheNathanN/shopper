@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/app-state";
+import { formatSlug } from "../../helpers/functions";
 import ContentCard from "../ContentCard/ContentCard";
 import styles from "./Category.module.scss";
 
@@ -15,11 +16,9 @@ const Category = ({ slug }: Props) => {
     (info: any): any => info.categories[0].slug === slug
   );
 
-  const displayText = slug.replace("-", " ").toUpperCase();
-
   return (
     <section className={styles.container} id={slug}>
-      <p className={styles["section-title"]}>{displayText}</p>
+      <p className={styles["section-title"]}>{formatSlug(slug)}</p>
       {filteredData &&
         filteredData.map((info: any) => (
           <ContentCard info={info} key={info.id} />

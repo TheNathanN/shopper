@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 
 import { AppContext } from "../../context/app-state";
 
@@ -6,7 +6,7 @@ import styles from "./CategoryMenu.module.scss";
 
 const CategoryMenu = () => {
   const context = useContext(AppContext);
-  const { currentCategory } = context;
+  const { currentCategory, setMobileMenu } = context;
   const formattedText = currentCategory.toUpperCase();
 
   return (
@@ -14,7 +14,7 @@ const CategoryMenu = () => {
       <div className={styles["mobile-view"]}>
         <p className={styles["mobile-cat"]}>{formattedText}</p>
         <div className={styles["mobile-bars"]}>
-          <i className="fa-solid fa-bars"></i>
+          <i onClick={() => setMobileMenu(true)} className="fa-solid fa-bars"></i>
         </div>
       </div>
     </section>

@@ -12,10 +12,11 @@ import HomeComp from "../components/HomeComp/HomeComp";
 import Nav from "../components/Nav/Nav";
 import Script from "next/script";
 import CategoryMenu from "../components/CategoryMenu/CategoryMenu";
+import MobileMenu from "../components/MobileMenu/MobileMenu";
 
 const Home: NextPage = () => {
   const context = useContext(AppContext);
-  const { error, setError, loading, setLoading, setData } = context;
+  const { error, setError, loading, setLoading, setData, mobileMenu } = context;
 
   useEffect(() => {
     setLoading(true);
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
 
       <div className={styles["mobile-pos"]}>
         <Nav />
-        <CategoryMenu />
+        {!mobileMenu ? <CategoryMenu /> : <MobileMenu />}
       </div>
 
       <main className={styles.main}>
