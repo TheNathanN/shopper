@@ -12,8 +12,16 @@ const ContentCard = ({ info }: Props) => {
     <section className={styles.container}>
       <div className={styles["img-container"]}>
         <Image src={info.image.url} width={80} height={80} />
+        <p className={styles.title}>{info.name}</p>
       </div>
-      <p>{info.name}</p>
+
+      <div className={styles["price-container"]}>
+        <p className={styles.price}>${info.price.formatted}</p>
+        <button className={styles["cart-btn"]}>
+          Add To Cart
+          <i className="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
     </section>
   );
 };

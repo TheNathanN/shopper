@@ -35,8 +35,11 @@ const Home: NextPage = () => {
         crossOrigin="anonymous"
       />
 
-      <Nav />
-      <CategoryMenu />
+      <div className={styles["mobile-pos"]}>
+        <Nav />
+        <CategoryMenu />
+      </div>
+
       <main className={styles.main}>
         {error && <ErrorComp />}
         {loading && <Loading />}
