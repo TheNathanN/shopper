@@ -7,10 +7,11 @@ interface Props {
 }
 
 const ContentCard = ({ info }: Props) => {
+
   return (
     <section className={styles.container}>
       <div className={styles["img-container"]}>
-        <Image src={info.image.url} width={100} height={100} />
+        <Image src={info.image.url} width={100} height={100} alt={info.name} />
       </div>
 
       <div className={styles["price-container"]}>

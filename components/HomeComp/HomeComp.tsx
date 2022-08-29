@@ -8,7 +8,7 @@ const HomeComp = () => {
 
   return (
     <div>
-      {categorySlugs.map(slug => (
+      {categorySlugs.map((slug) => (
         <Category slug={slug} key={slug} />
       ))}
     </div>

@@ -14,7 +14,7 @@ let setUser: React.Dispatch<
 > = () => {};
 let currentCategory: string = "";
 let setCurrentCategory: React.Dispatch<
-  React.SetStateAction<Categories>
+  React.SetStateAction<Categories | "">
 > = () => {};
 let mobileMenu: boolean = false;
 let setMobileMenu: React.Dispatch<React.SetStateAction<boolean>> = () => {};
@@ -42,7 +42,7 @@ export default function AppState(props: any) {
   const [data, setData] = useState<any>();
   const [user, setUser] = useState<string | undefined>();
   const [currentCategory, setCurrentCategory] =
-    useState<Categories>("speakers");
+    useState<Categories | "">("");
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
