@@ -6,11 +6,11 @@ import { AppContext } from "../context/app-state";
 import { getAllProducts } from "../helpers/dataFetchers";
 
 import Head from "next/head";
+import Script from "next/script";
 import ErrorComp from "../components/ErrorComp/ErrorComp";
 import Loading from "../components/Loading/Loading";
 import HomeComp from "../components/HomeComp/HomeComp";
 import Nav from "../components/Nav/Nav";
-import Script from "next/script";
 import CategoryMenu from "../components/CategoryMenu/CategoryMenu";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
 
