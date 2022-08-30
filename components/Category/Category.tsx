@@ -1,10 +1,11 @@
+import styles from "./Category.module.scss";
+
 import React, { useContext, useEffect } from "react";
 import { useInView } from "react-hook-inview";
 import { AppContext } from "../../context/app-state";
 import { formatSlug } from "../../helpers/functions";
 import { Categories } from "../../helpers/types";
 import ContentCard from "../ContentCard/ContentCard";
-import styles from "./Category.module.scss";
 
 interface Props {
   slug: Categories;

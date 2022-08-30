@@ -32,7 +32,7 @@ export const AppContext = createContext({
   currentCategory,
   setCurrentCategory,
   mobileMenu,
-  setMobileMenu
+  setMobileMenu,
 });
 
 // The Context Setup with useState
@@ -40,9 +40,8 @@ export default function AppState(props: any) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<any>();
-  const [user, setUser] = useState<string | undefined>();
-  const [currentCategory, setCurrentCategory] =
-    useState<Categories | "">("");
+  const [user, setUser] = useState<string | undefined>("user");
+  const [currentCategory, setCurrentCategory] = useState<Categories | "">("");
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
@@ -59,7 +58,7 @@ export default function AppState(props: any) {
         currentCategory,
         setCurrentCategory,
         mobileMenu,
-        setMobileMenu
+        setMobileMenu,
       }}
     >
       {props.children}

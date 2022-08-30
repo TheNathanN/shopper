@@ -5,10 +5,11 @@ import { categorySlugs } from "../../helpers/variables";
 import { formatSlug } from "../../helpers/functions";
 import { AppContext } from "../../context/app-state";
 import { Categories } from "../../helpers/types";
+import UserCart from "../UserCart/UserCart";
 
 const MobileMenu = () => {
   const context = useContext(AppContext);
-  const { setMobileMenu, currentCategory, setCurrentCategory } = context;
+  const { setMobileMenu, currentCategory, setCurrentCategory, user } = context;
 
   const clickHandler = (slug: Categories) => {
     setMobileMenu(false);
@@ -37,6 +38,7 @@ const MobileMenu = () => {
           </li>
         ))}
       </ul>
+      <UserCart />
     </div>
   );
 };
