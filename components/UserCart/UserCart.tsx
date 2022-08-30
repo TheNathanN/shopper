@@ -5,12 +5,12 @@ import { AppContext } from "../../context/app-state";
 
 const UserCart = () => {
   const context = useContext(AppContext);
-  const { user } = context;
+  const { user, setShowSignin } = context;
 
   return (
     <div className={styles.user}>
       {!user ? (
-        <i className="fa-solid fa-user"></i>
+        <i onClick={() => setShowSignin(true)} className="fa-solid fa-user"></i>
       ) : (
         <i className="fa-solid fa-cart-shopping"></i>
       )}

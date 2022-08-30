@@ -8,5 +8,5 @@ export type Categories =
 export interface User {
   email: string;
   name: string;
-  userName: string;
+  password: string;
 }
