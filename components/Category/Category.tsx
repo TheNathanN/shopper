@@ -26,6 +26,8 @@ const Category = ({ slug }: Props) => {
     if (isVisible) setCurrentCategory(slug);
   }, [currentCategory, isVisible, slug, setCurrentCategory]);
 
+  console.log(data);
+
   return filteredData ? (
     <section className={styles.container} id={slug} ref={ref}>
       <p className={styles["section-title"]}>{formatSlug(slug)}</p>

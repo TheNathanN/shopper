@@ -4,3 +4,9 @@ export type Categories =
   | "laptops"
   | "computers"
   | "midi-keyboards";
+
+export interface User {
+  email: string;
+  name: string;
+  userName: string;
+}
