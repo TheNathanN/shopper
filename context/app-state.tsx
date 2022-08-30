@@ -40,7 +40,7 @@ export default function AppState(props: any) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<any>();
-  const [user, setUser] = useState<string | undefined>("user");
+  const [user, setUser] = useState<string | undefined>();
   const [currentCategory, setCurrentCategory] = useState<Categories | "">("");
   const [mobileMenu, setMobileMenu] = useState(false);
 
