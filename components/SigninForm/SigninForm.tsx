@@ -8,6 +8,7 @@ const SigninForm = () => {
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Sign In N/A");
     console.log(e);
   };
 
@@ -15,7 +16,7 @@ const SigninForm = () => {
     setUser({
       email: "guest@email.com",
       name: "Guest",
-      password: "1234abc",
+      password: "",
     });
     setShowSignin(false);
     setMobileMenu(false);
@@ -25,12 +26,16 @@ const SigninForm = () => {
     <form action="Login" onSubmit={submitHandler} className={styles.container}>
       <label htmlFor="email">Email</label>
       <input type="email" name="email" id="email" required />
+
       <label htmlFor="password">Password</label>
       <input type="password" name="password" id="password" required />
+
       <hr className={styles.line} />
+
       <button type="submit" className={styles["login-btn"]}>
         Login
       </button>
+
       <button
         type="button"
         onClick={guestHandler}
