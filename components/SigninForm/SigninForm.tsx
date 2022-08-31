@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../context/app-state";
 import styles from "./SigninForm.module.scss";
 
 const SigninForm = () => {
+  const context = useContext(AppContext);
+  const { setUser, setMobileMenu, setShowSignin } = context;
+
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(e);
   };
 
-  const guestHandler = () => {};
+  const guestHandler = () => {
+    setUser({
+      email: "guest@email.com",
+      name: "Guest",
+      password: "1234abc",
+    });
+    setShowSignin(false);
+    setMobileMenu(false);
+  };
 
   return (
     <form action="Login" onSubmit={submitHandler} className={styles.container}>
