@@ -27,6 +27,7 @@ const SigninForm = () => {
       <input type="email" name="email" id="email" required />
       <label htmlFor="password">Password</label>
       <input type="password" name="password" id="password" required />
+      <hr className={styles.line} />
       <button type="submit" className={styles["login-btn"]}>
         Login
       </button>
