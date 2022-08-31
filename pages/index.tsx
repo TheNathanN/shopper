@@ -31,7 +31,7 @@ const Home: NextPage = () => {
     setLoading(true);
     getAllProducts(setData, setError);
     setLoading(false);
-  }, [setData, setError, setLoading]);
+  }, [setData, setError, setLoading, mobileMenu]);
 
   return (
     <div className={styles.container}>
@@ -51,11 +51,13 @@ const Home: NextPage = () => {
         {!mobileMenu ? <CategoryMenu /> : <MobileMenu />}
       </div>
 
-      <main className={styles.main}>
-        {error && <ErrorComp />}
-        {loading && <Loading />}
-        <HomeComp />
-      </main>
+      {!mobileMenu && (
+        <main className={styles.main}>
+          {error && <ErrorComp />}
+          {loading && <Loading />}
+          <HomeComp />
+        </main>
+      )}
 
       <footer className={styles.footer}></footer>
     </div>
