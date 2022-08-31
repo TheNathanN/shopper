@@ -16,9 +16,9 @@ let setCurrentCategory: React.Dispatch<
 > = () => {};
 let mobileMenu: boolean = false;
 let setMobileMenu: React.Dispatch<React.SetStateAction<boolean>> = () => {};
-let cart: string[] | undefined;
+let cart: string[][] | number[][] | undefined;
 let setCart: React.Dispatch<
-  React.SetStateAction<string[] | undefined>
+  React.SetStateAction<string[][] | number[][] | undefined>
 > = () => {};
 let showSignin: boolean = false;
 let setShowSignin: React.Dispatch<React.SetStateAction<boolean>> = () => {};
@@ -51,7 +51,7 @@ export default function AppState(props: any) {
   const [user, setUser] = useState<User | undefined>();
   const [currentCategory, setCurrentCategory] = useState<Categories | "">("");
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [cart, setCart] = useState<string[] | undefined>();
+  const [cart, setCart] = useState<string[][] | number[][] | undefined>();
   const [showSignin, setShowSignin] = useState<boolean>(false);
 
   return (
