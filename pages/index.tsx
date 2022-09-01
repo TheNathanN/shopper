@@ -45,7 +45,10 @@ const Home: NextPage = () => {
         crossOrigin="anonymous"
       />
 
-      <div className={styles["mobile-pos"]}>
+      <div
+        className={styles["mobile-pos"]}
+        style={mobileMenu ? { height: "100%" } : { height: "10em" }}
+      >
         {showSignin && <SigninModal />}
         <Nav />
         {!mobileMenu ? <CategoryMenu /> : <MobileMenu />}
