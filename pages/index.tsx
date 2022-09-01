@@ -14,6 +14,7 @@ import Nav from "../components/Nav/Nav";
 import CategoryMenu from "../components/CategoryMenu/CategoryMenu";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
 import SigninModal from "../components/SigninModal/SigninModal";
+import Cart from "../components/Cart/Cart";
 
 const Home: NextPage = () => {
   const context = useContext(AppContext);
@@ -25,13 +26,14 @@ const Home: NextPage = () => {
     setData,
     mobileMenu,
     showSignin,
+    showCart,
   } = context;
 
   useEffect(() => {
     setLoading(true);
     getAllProducts(setData, setError);
     setLoading(false);
-  }, [setData, setError, setLoading, mobileMenu]);
+  }, [setData, setError, setLoading, mobileMenu, showCart]);
 
   return (
     <div className={styles.container}>
@@ -58,7 +60,7 @@ const Home: NextPage = () => {
         <main className={styles.main}>
           {error && <ErrorComp />}
           {loading && <Loading />}
-          <HomeComp />
+          {!showCart ? <HomeComp /> : <Cart />}
         </main>
       )}
 

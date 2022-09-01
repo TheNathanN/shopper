@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 
 import { AppContext } from "../../context/app-state";
 
@@ -14,7 +14,10 @@ const CategoryMenu = () => {
       <div className={styles["mobile-view"]}>
         <p className={styles["mobile-cat"]}>{formattedText}</p>
         <div className={styles["mobile-bars"]}>
-          <i onClick={() => setMobileMenu(true)} className="fa-solid fa-bars"></i>
+          <i
+            onClick={() => setMobileMenu(true)}
+            className="fa-solid fa-bars"
+          ></i>
         </div>
       </div>
     </section>

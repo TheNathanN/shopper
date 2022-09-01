@@ -9,9 +9,11 @@ interface Props {
 
 const ContentCard = ({ info }: Props) => {
   const context = useContext(AppContext);
-  const { setCart, cart, user, setShowSignin, setMobileMenu } = context;
+  const { setCart, cart, user, setShowSignin, setMobileMenu, setShowCart } =
+    context;
 
   const btnHandler = () => {
+    setShowCart(false);
     if (!user) {
       setMobileMenu(true);
       setShowSignin(true);

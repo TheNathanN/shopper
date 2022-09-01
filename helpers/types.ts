@@ -3,7 +3,8 @@ export type Categories =
   | "headphones"
   | "laptops"
   | "computers"
-  | "midi-keyboards";
+  | "midi-keyboards"
+  | "cart";
 
 export interface User {
   email: string;

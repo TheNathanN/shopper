@@ -9,11 +9,18 @@ import UserCart from "../UserCart/UserCart";
 
 const MobileMenu = () => {
   const context = useContext(AppContext);
-  const { setMobileMenu, currentCategory, setCurrentCategory, user } = context;
+  const {
+    setMobileMenu,
+    currentCategory,
+    setCurrentCategory,
+    user,
+    setShowCart,
+  } = context;
 
   const clickHandler = (slug: Categories) => {
     setMobileMenu(false);
     setCurrentCategory(slug);
+    setShowCart(false);
   };
 
   return (

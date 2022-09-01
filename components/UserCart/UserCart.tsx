@@ -5,14 +5,28 @@ import { AppContext } from "../../context/app-state";
 
 const UserCart = () => {
   const context = useContext(AppContext);
-  const { user, setShowSignin } = context;
+  const {
+    user,
+    setShowSignin,
+    setShowCart,
+    setMobileMenu,
+    setCurrentCategory,
+  } = context;
 
   return (
     <div className={styles.user}>
       {!user ? (
         <i onClick={() => setShowSignin(true)} className="fa-solid fa-user"></i>
       ) : (
-        <i className="fa-solid fa-cart-shopping"></i>
+        <i
+          onClick={() => {
+            setCurrentCategory("cart");
+            setMobileMenu(false);
+            setShowSignin(false);
+            setShowCart(true);
+          }}
+          className="fa-solid fa-cart-shopping"
+        ></i>
       )}
     </div>
   );
