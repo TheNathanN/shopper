@@ -1,0 +1,38 @@
+.container {
+  margin-bottom: 1em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.count-container,
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.details-container {
+  width: 80%;
+  margin-left: 1em;
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+.count-container {
+  align-items: center;
+  width: 20%;
+
+  label {
+    font-size: 0.8em;
+  }
+
+  input {
+    width: 3.5em;
+    height: 2em;
+    text-align: center;
+    outline: none;
+  }
+}

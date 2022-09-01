@@ -24,6 +24,8 @@ let showSignin: boolean = false;
 let setShowSignin: React.Dispatch<React.SetStateAction<boolean>> = () => {};
 let showCart: boolean = false;
 let setShowCart: React.Dispatch<React.SetStateAction<boolean>> = () => {};
+let cartCount: number = 0;
+let setCartCount: React.Dispatch<React.SetStateAction<number>> = () => {};
 
 //  The Global Context
 export const AppContext = createContext({
@@ -45,6 +47,8 @@ export const AppContext = createContext({
   setShowSignin,
   showCart,
   setShowCart,
+  cartCount,
+  setCartCount,
 });
 
 // The Context Setup with useState
@@ -58,6 +62,7 @@ export default function AppState(props: any) {
   const [cart, setCart] = useState<{ [id: string]: number } | undefined>();
   const [showSignin, setShowSignin] = useState<boolean>(false);
   const [showCart, setShowCart] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   return (
     <AppContext.Provider
@@ -80,6 +85,8 @@ export default function AppState(props: any) {
         setShowSignin,
         showCart,
         setShowCart,
+        cartCount,
+        setCartCount,
       }}
     >
       {props.children}

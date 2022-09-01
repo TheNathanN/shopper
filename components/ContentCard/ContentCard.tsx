@@ -9,17 +9,29 @@ interface Props {
 
 const ContentCard = ({ info }: Props) => {
   const context = useContext(AppContext);
-  const { setCart, cart, user, setShowSignin, setMobileMenu, setShowCart } =
-    context;
+  const {
+    setCart,
+    cart,
+    user,
+    setShowSignin,
+    setMobileMenu,
+    setShowCart,
+    setCartCount,
+    cartCount,
+  } = context;
 
   const btnHandler = () => {
     setShowCart(false);
     if (!user) {
       setMobileMenu(true);
       setShowSignin(true);
-    } else if (!cart) setCart({ [info.id]: 1 });
+    }
+
+    if (!cart) setCart({ [info.id]: 1 });
     else if (cart[info.id]) setCart({ ...cart, [info.id]: cart[info.id] + 1 });
     else setCart({ ...cart, [info.id]: 1 });
+
+    setCartCount(cartCount + 1);
   };
 
   return (
