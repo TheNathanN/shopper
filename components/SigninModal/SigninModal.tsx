@@ -3,8 +3,8 @@ import styles from "./SigninModal.module.scss";
 
 import HeaderOptions from "./HeaderOptions/HeaderOptions";
 import CloseBtn from "./CloseBtn/CloseBtn";
-import SigninForm from "../SigninForm/SigninForm";
-import SignUpForm from "../SignUpForm/SignUpForm";
+import SigninForm from "./SigninForm/SigninForm";
+import SignUpForm from "./SignUpForm/SignUpForm";
 
 export type Mode = "Login" | "Sign Up";
 

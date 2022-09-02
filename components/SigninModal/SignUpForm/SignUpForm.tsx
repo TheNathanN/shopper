@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AppContext } from "../../context/app-state";
+import { AppContext } from "../../../context/app-state";
 import styles from "./SignUp Form.module.scss";
 
 interface FormData {
