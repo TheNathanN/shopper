@@ -39,8 +39,8 @@ const ContentCard = ({ info }: Props) => {
       <div className={styles["img-container"]}>
         <Image
           src={info.image.url}
-          width={100}
-          height={100}
+          width={120}
+          height={110}
           alt={info.name}
           priority
         />
