@@ -7,7 +7,7 @@ import styles from "./CategoryMenu.module.scss";
 const CategoryMenu = () => {
   const context = useContext(AppContext);
   const { currentCategory, setMobileMenu } = context;
-  const formattedText = currentCategory.toUpperCase();
+  const formattedText = currentCategory.toUpperCase().replace('-', ' ');
 
   return (
     <section className={styles.container}>

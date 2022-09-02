@@ -23,11 +23,12 @@ const CartCard = ({ item, count }: Props) => {
 
   return (
     <div className={styles.container}>
-      <Image src={item.image.url} width={100} height={100} alt={item.name} />
+      <Image src={item.image.url} width={100} height={80} alt={item.name} />
       <div className={styles["details-container"]}>
         <p className={styles.name}>{item.name}</p>
         <p>${item.price.formatted}</p>
       </div>
+
       <div className={styles["count-container"]}>
         <label htmlFor="count">Count</label>
         <input
