@@ -1,5 +1,4 @@
 import styles from "./MobileMenu.module.scss";
-
 import React, { useContext } from "react";
 import { categorySlugs } from "../../helpers/variables";
 import { formatSlug } from "../../helpers/functions";
@@ -13,7 +12,6 @@ const MobileMenu = () => {
     setMobileMenu,
     currentCategory,
     setCurrentCategory,
-    user,
     setShowCart,
   } = context;
 

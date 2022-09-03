@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./SigninModal.module.scss";
-
 import HeaderOptions from "./HeaderOptions/HeaderOptions";
 import CloseBtn from "./CloseBtn/CloseBtn";
 import SigninForm from "./SigninForm/SigninForm";

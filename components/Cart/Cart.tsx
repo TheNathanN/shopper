@@ -1,12 +1,12 @@
+import styles from "./Cart.module.scss";
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../../context/app-state";
 import { pluralCheck } from "../../helpers/functions";
 import CartCard from "../CartCard/CartCard";
-import styles from "./Cart.module.scss";
 
 const Cart = () => {
   const context = useContext(AppContext);
-  const { setCart, cart, cartCount, data, setCartCount } = context;
+  const { cart, cartCount, data, setCartCount } = context;
 
   const cartItems = data.data.filter((info: any) => {
     if (cart && cart[info.id]) return info;
@@ -20,7 +20,7 @@ const Cart = () => {
       );
       setCartCount(newCount);
     }
-  }, [cart, cartCount]);
+  }, [cart, cartCount, setCartCount]);
 
   return (
     <div className={styles.container}>

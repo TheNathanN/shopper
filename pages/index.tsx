@@ -33,7 +33,7 @@ const Home: NextPage = () => {
     setLoading(true);
     getAllProducts(setData, setError);
     setLoading(false);
-  }, [setData, setError, setLoading, mobileMenu, showCart]);
+  }, [setData, setError, setLoading]);
 
   return (
     <div className={styles.container}>

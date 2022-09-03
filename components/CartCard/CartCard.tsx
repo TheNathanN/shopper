@@ -11,7 +11,7 @@ interface Props {
 
 const CartCard = ({ item, count }: Props) => {
   const context = useContext(AppContext);
-  const { cart, setCart, setCartCount, cartCount } = context;
+  const { cart, setCart } = context;
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (cart)

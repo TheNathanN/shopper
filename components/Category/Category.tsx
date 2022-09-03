@@ -1,5 +1,4 @@
 import styles from "./Category.module.scss";
-
 import React, { useContext, useEffect } from "react";
 import { useInView } from "react-hook-inview";
 import { AppContext } from "../../context/app-state";
