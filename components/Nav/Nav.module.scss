@@ -7,18 +7,21 @@
   align-items: center;
   position: relative;
 
-  .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    border-bottom: 3px solid white;
-    width: 5.5em;
-    text-align: center;
-  }
-
   div {
     font-size: 1.2em;
     i {
       cursor: pointer;
     }
+  }
+
+  .btn {
+    background-color: transparent;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    color: white;
+    border-bottom: 3px solid white;
+    width: 5.5em;
+    text-align: center;
   }
 }
