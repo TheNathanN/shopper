@@ -1,4 +1,4 @@
-.container ,
+.container,
 .count-container,
 .details-container {
   display: flex;
@@ -11,7 +11,6 @@
   border-bottom: 1px solid black;
   padding-bottom: 1em;
 }
-
 
 .count-container,
 .details-container {
@@ -39,10 +38,27 @@
 
   input {
     margin: 0;
-    width: 3.5em;
-    height: 2.8em;
+    width: 3em;
+    height: 2.3em;
     text-align: center;
     outline: none;
     font-size: 0.9em;
+    background-color: white;
+    border: 1px black solid;
+    color: black;
+    border-radius: 2px;
+  }
+}
+
+.btn-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  font-size: 1.2em;
+
+  button {
+    background: transparent;
+    padding: 0.2em;
+    border: 0;
   }
 }

@@ -13,11 +13,11 @@ const CartCard = ({ item, count }: Props) => {
   const context = useContext(AppContext);
   const { cart, setCart } = context;
 
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const btnHandler = (type: "-" | "+") => {
     if (cart)
       setCart({
         ...cart,
-        [item.id]: Number(e.currentTarget.value),
+        [item.id]: type === "-" ? cart[item.id] - 1 : cart[item.id] + 1,
       });
   };
 
@@ -31,13 +31,12 @@ const CartCard = ({ item, count }: Props) => {
 
       <div className={styles["count-container"]}>
         <label htmlFor="count">Count</label>
-        <input
-          type="number"
-          name="count"
-          id="count"
-          value={count}
-          onChange={e => changeHandler(e)}
-        />
+        <input type="number" name="count" id="count" value={count} disabled />
+
+        <div className={styles["btn-container"]}>
+          <button onClick={() => btnHandler("-")}>-</button>
+          <button onClick={() => btnHandler("+")}>+</button>
+        </div>
       </div>
     </div>
   );
