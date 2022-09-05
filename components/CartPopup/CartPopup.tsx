@@ -1,9 +1,9 @@
 import React from "react";
-import style from "./CartPopup.module.scss";
+import styles from "./CartPopup.module.scss";
 
 const CartPopup = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <div>CartPopup</div>
     </div>
   );

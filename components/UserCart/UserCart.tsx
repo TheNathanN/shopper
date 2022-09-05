@@ -11,6 +11,8 @@ const UserCart = () => {
     setShowCart,
     setMobileMenu,
     setCurrentCategory,
+    setSigninPop,
+    setCartPop
   } = context;
 
   return (
@@ -24,6 +26,8 @@ const UserCart = () => {
             setMobileMenu(false);
             setShowSignin(false);
             setShowCart(true);
+            setCartPop(false);
+            setSigninPop(false);
           }}
           className="fa-solid fa-cart-shopping"
         ></i>

@@ -15,6 +15,8 @@ import CategoryMenu from "../components/CategoryMenu/CategoryMenu";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
 import SigninModal from "../components/SigninModal/SigninModal";
 import Cart from "../components/Cart/Cart";
+import CartPopup from "../components/CartPopup/CartPopup";
+import SigninPopup from "../components/SigninPopup/SigninPopup";
 
 const Home: NextPage = () => {
   const context = useContext(AppContext);
@@ -27,6 +29,8 @@ const Home: NextPage = () => {
     mobileMenu,
     showSignin,
     showCart,
+    cartPop,
+    signinPop
   } = context;
 
   useEffect(() => {
@@ -47,6 +51,8 @@ const Home: NextPage = () => {
         crossOrigin="anonymous"
       />
 
+      {cartPop ? <CartPopup /> : signinPop && <SigninPopup />}
+      
       <div
         className={styles["mobile-pos"]}
         style={mobileMenu ? { height: "100%" } : { height: "10em" }}

@@ -3,7 +3,7 @@ import React from "react";
 
 const SigninPopup = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <div>SigninPopup</div>
     </div>
   );
