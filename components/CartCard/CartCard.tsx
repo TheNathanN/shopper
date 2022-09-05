@@ -31,7 +31,7 @@ const CartCard = ({ item, count }: Props) => {
 
       <div className={styles["count-container"]}>
         <label htmlFor="count">Count</label>
-        <input type="number" name="count" id="count" value={count} disabled />
+        <input type="number" name="count" id="count" value={count} />
 
         <div className={styles["btn-container"]}>
           <button onClick={() => btnHandler("-")}>-</button>
