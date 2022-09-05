@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import styles from "./ContentCard.module.scss";
 import { AppContext } from "../../context/app-state";
+import { callPopup } from "../../helpers/functions";
 
 interface Props {
   info: any;
@@ -18,6 +19,7 @@ const ContentCard = ({ info }: Props) => {
     setShowCart,
     setCartCount,
     cartCount,
+    setCartPop,
   } = context;
 
   const btnHandler = () => {
@@ -25,6 +27,8 @@ const ContentCard = ({ info }: Props) => {
     if (!user) {
       setMobileMenu(true);
       setShowSignin(true);
+    } else {
+      callPopup(setCartPop);
     }
 
     if (!cart) setCart({ [info.id]: 1 });

@@ -26,6 +26,10 @@ let showCart: boolean = false;
 let setShowCart: React.Dispatch<React.SetStateAction<boolean>> = () => {};
 let cartCount: number = 0;
 let setCartCount: React.Dispatch<React.SetStateAction<number>> = () => {};
+let cartPop: boolean = false;
+let setCartPop: React.Dispatch<React.SetStateAction<boolean>> = () => {};
+let signinPop: boolean = false;
+let setSigninPop: React.Dispatch<React.SetStateAction<boolean>> = () => {};
 
 //  The Global Context
 export const AppContext = createContext({
@@ -49,6 +53,10 @@ export const AppContext = createContext({
   setShowCart,
   cartCount,
   setCartCount,
+  cartPop,
+  setCartPop,
+  signinPop,
+  setSigninPop,
 });
 
 // The Context Setup with useState
@@ -63,6 +71,8 @@ export default function AppState(props: any) {
   const [showSignin, setShowSignin] = useState<boolean>(false);
   const [showCart, setShowCart] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [cartPop, setCartPop] = useState(false);
+  const [signinPop, setSigninPop] = useState(false);
 
   return (
     <AppContext.Provider
@@ -87,6 +97,10 @@ export default function AppState(props: any) {
         setShowCart,
         cartCount,
         setCartCount,
+        cartPop,
+        setCartPop,
+        signinPop,
+        setSigninPop,
       }}
     >
       {props.children}

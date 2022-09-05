@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../../context/app-state";
+import { callPopup } from "../../../helpers/functions";
 import styles from "./SignUp Form.module.scss";
 
 interface FormData {
@@ -10,7 +11,7 @@ interface FormData {
 
 const SignUpForm = () => {
   const context = useContext(AppContext);
-  const { setUser, setMobileMenu, setShowSignin } = context;
+  const { setUser, setMobileMenu, setShowSignin, setSigninPop } = context;
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -26,6 +27,7 @@ const SignUpForm = () => {
     });
     setShowSignin(false);
     setMobileMenu(false);
+    callPopup(setSigninPop);
   };
 
   return (
@@ -40,7 +42,7 @@ const SignUpForm = () => {
         name="name"
         id="name"
         value={formData.name}
-        onChange={e => {
+        onChange={(e) => {
           setFormData({
             ...formData,
             name: e.currentTarget.value,
@@ -55,7 +57,7 @@ const SignUpForm = () => {
         name="email"
         id="email"
         value={formData.email}
-        onChange={e => {
+        onChange={(e) => {
           setFormData({
             ...formData,
             email: e.currentTarget.value,
@@ -70,7 +72,7 @@ const SignUpForm = () => {
         name="password"
         id="password"
         value={formData.password}
-        onChange={e => {
+        onChange={(e) => {
           setFormData({
             ...formData,
             password: e.currentTarget.value,

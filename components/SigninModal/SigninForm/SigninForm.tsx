@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../../context/app-state";
+import { callPopup } from "../../../helpers/functions";
 import styles from "./SigninForm.module.scss";
 
 const SigninForm = () => {
   const context = useContext(AppContext);
-  const { setUser, setMobileMenu, setShowSignin } = context;
+  const { setUser, setMobileMenu, setShowSignin, setSigninPop } = context;
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const SigninForm = () => {
     });
     setShowSignin(false);
     setMobileMenu(false);
+    callPopup(setSigninPop);
   };
 
   return (
