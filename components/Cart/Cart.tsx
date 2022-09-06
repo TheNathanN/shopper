@@ -34,6 +34,7 @@ const Cart = () => {
       ))}
 
       <TotalPrice cartItems={cartItems} />
+      <button className={styles.btn}>Checkout HERE</button>
     </div>
   );
 };
