@@ -56,12 +56,16 @@ const ProductPage = () => {
       {!mobileMenu && item[0] && <main className={styles.main}>
         <Image src={item[0].image.url} alt={item[0].name} width={'100%'} height={'100%'} />
         <h1>{item[0].name}</h1>
+        
         <div className={styles['price-container']}>
           <p>Price:</p>
           <p className={styles.price}>${item[0].price.formatted}</p>
         </div>
+
         <AddToCartBtn info={item[0]} />
+
         <p className={styles.description}>{item[0].description.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
+
         <AddToCartBtn info={item[0]} />
       </main>}
     </div>
