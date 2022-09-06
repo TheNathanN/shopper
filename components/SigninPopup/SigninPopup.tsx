@@ -13,6 +13,7 @@ const SigninPopup = () => {
           setMobileMenu(false);
           setSigninPop(false);
           setShowCart(true);
+          window.scrollTo(0, 0);
         }}
       >
         View Your Cart Here

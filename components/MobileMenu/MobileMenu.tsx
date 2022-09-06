@@ -19,6 +19,7 @@ const MobileMenu = () => {
     setMobileMenu(false);
     setCurrentCategory(slug);
     setShowCart(false);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -29,15 +30,7 @@ const MobileMenu = () => {
           <li
             onClick={() => clickHandler(slug)}
             key={slug}
-            style={
-              currentCategory === slug
-                ? {
-                    textDecoration: "underline",
-                    textDecorationThickness: "2px",
-                    textUnderlineOffset: ".5em",
-                  }
-                : {}
-            }
+            className={`${currentCategory === slug ? styles.selected : ''}`}
           >
             <a href={`#${slug}`}>{formatSlug(slug)}</a>
           </li>

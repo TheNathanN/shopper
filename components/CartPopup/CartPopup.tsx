@@ -16,6 +16,7 @@ const CartPopup = () => {
           setSigninPop(false);
           setCartPop(false);
           setShowCart(true);
+          window.scrollTo(0, 0);
         }}
       >
         View Cart Here
