@@ -15,7 +15,7 @@ const TotalPrice = ({cartItems}: Props) => {
     if (cart) {
       for (const [key, value] of Object.entries(cart)) {
         const currentItem = cartItems.filter((item: any) => item.id === key);
-        const total = currentItem[0].price.raw * value;
+        const total = currentItem[0] ? currentItem[0].price.raw * value : 0;
         price += total;
       }
     }
