@@ -4,7 +4,7 @@ import { AppContext } from "../../context/app-state";
 
 const CartPopup = () => {
   const context = useContext(AppContext);
-  const { setCartPop, setShowCart, setSigninPop } = context;
+  const { setCartPop, setShowCart, setSigninPop, setMobileMenu } = context;
   return (
     <div className={styles.container}>
       <p className={styles.header}>
@@ -12,6 +12,7 @@ const CartPopup = () => {
       </p>
       <button
         onClick={() => {
+          setMobileMenu(false);
           setSigninPop(false);
           setCartPop(false);
           setShowCart(true);
