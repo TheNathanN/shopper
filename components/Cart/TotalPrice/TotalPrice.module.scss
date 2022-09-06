@@ -1,0 +1,14 @@
+.container {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.header, .price {
+   border-bottom: 1px solid black;
+   padding-bottom: 1em;
+ }
+
+.price {
+  margin: 1em 0;
+}
