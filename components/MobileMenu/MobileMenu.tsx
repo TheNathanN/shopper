@@ -1,5 +1,6 @@
 import styles from "./MobileMenu.module.scss";
 import React, { useContext } from "react";
+import { useRouter } from "next/router";
 import { categorySlugs } from "../../helpers/variables";
 import { formatSlug } from "../../helpers/functions";
 import { AppContext } from "../../context/app-state";
@@ -7,6 +8,7 @@ import { Categories } from "../../helpers/types";
 import UserCart from "../UserCart/UserCart";
 
 const MobileMenu = () => {
+  const router = useRouter();
   const context = useContext(AppContext);
   const {
     setMobileMenu,
@@ -16,6 +18,7 @@ const MobileMenu = () => {
   } = context;
 
   const clickHandler = (slug: Categories) => {
+    router.push('/');
     setMobileMenu(false);
     setCurrentCategory(slug);
     setShowCart(false);

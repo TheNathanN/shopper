@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "./ContentCard.module.scss";
 import { AppContext } from "../../context/app-state";
 import { callPopup } from "../../helpers/functions";
+import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
 
 interface Props {
   info: any;
 }
 
 const ContentCard = ({ info }: Props) => {
+  const router = useRouter();
   const context = useContext(AppContext);
   const {
     setCart,
@@ -38,9 +41,13 @@ const ContentCard = ({ info }: Props) => {
     setCartCount(cartCount + 1);
   };
 
+  const clickHandler = () => {
+    router.push(info.id);
+  }
+
   return (
     <section className={styles.container}>
-      <div className={styles["img-container"]}>
+      <div onClick={clickHandler} className={styles["img-container"]}>
         <Image
           src={info.image.url}
           width={120}
@@ -51,16 +58,9 @@ const ContentCard = ({ info }: Props) => {
       </div>
 
       <div className={styles["price-container"]}>
-        <p className={styles.title}>{info.name}</p>
-        <p className={styles.price}>${info.price.formatted}</p>
-        <button
-          onClick={btnHandler}
-          className={styles["cart-btn"]}
-          type="button"
-        >
-          Add To Cart
-          <i className="fa-solid fa-cart-shopping"></i>
-        </button>
+        <p onClick={clickHandler} className={styles.title}>{info.name}</p>
+        <p onClick={clickHandler} className={styles.price}>${info.price.formatted}</p>
+          <AddToCartBtn info={info} />
       </div>
     </section>
   );

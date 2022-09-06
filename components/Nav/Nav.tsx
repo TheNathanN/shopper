@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../context/app-state";
 import styles from "./Nav.module.scss";
+import React, { useContext } from "react";
+import { useRouter } from "next/router";
+import { AppContext } from "../../context/app-state";
 
 const Nav = () => {
+  const router = useRouter();
   const context = useContext(AppContext);
   const {
     user,
@@ -22,6 +24,7 @@ const Nav = () => {
           setMobileMenu(false);
           setShowSignin(false);
           setShowCart(false);
+          router.push('/');
         }}
       >
         <p className={styles.logo}>Audiophile</p>

@@ -7,7 +7,7 @@ import TotalPrice from "./TotalPrice/TotalPrice";
 
 const Cart = () => {
   const context = useContext(AppContext);
-  const { cart, cartCount, data, setCartCount } = context;
+  const { cart, cartCount, data, setCartCount, setCurrentCategory } = context;
 
   const cartItems = data.data.filter((info: any) => {
     if (cart && cart[info.id]) return info;
@@ -21,7 +21,8 @@ const Cart = () => {
       );
       setCartCount(newCount);
     }
-  }, [cart, cartCount, setCartCount]);
+    setCurrentCategory('cart');
+  }, [cart, cartCount, setCartCount, setCurrentCategory]);
 
   return (
     <div className={styles.container}>

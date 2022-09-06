@@ -1,5 +1,6 @@
 import styles from "./CartCard.module.scss";
 import React, { useContext } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 import { AppContext } from "../../context/app-state";
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const CartCard = ({ item, count }: Props) => {
+  const router = useRouter();
   const context = useContext(AppContext);
   const { cart, setCart } = context;
 
@@ -21,10 +23,14 @@ const CartCard = ({ item, count }: Props) => {
       });
   };
 
+  const clickHandler = () => {
+    router.push(item.id);
+  }
+
   return (
     <div className={styles.container}>
-      <Image src={item.image.url} width={120} height={110} alt={item.name} />
-      <div className={styles["details-container"]}>
+      <Image onClick={clickHandler} src={item.image.url} width={120} height={110} alt={item.name} />
+      <div onClick={clickHandler} className={styles["details-container"]}>
         <p className={styles.name}>{item.name}</p>
         <p>${item.price.formatted}</p>
       </div>

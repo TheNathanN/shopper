@@ -53,14 +53,14 @@ const Home: NextPage = () => {
 
       {cartPop ? <CartPopup /> : signinPop && <SigninPopup />}
       
-      <div
+      <section
         className={styles["mobile-pos"]}
         style={mobileMenu ? { height: "100%" } : { height: "10em" }}
       >
         {showSignin && <SigninModal />}
         <Nav />
         {!mobileMenu ? <CategoryMenu /> : <MobileMenu />}
-      </div>
+      </section>
 
       {!mobileMenu && (
         <main className={styles.main}>
