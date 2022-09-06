@@ -60,6 +60,7 @@ const ProductPage = () => {
           <p>Price:</p>
           <p className={styles.price}>${item[0].price.formatted}</p>
         </div>
+        <AddToCartBtn info={item[0]} />
         <p className={styles.description}>{item[0].description.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
         <AddToCartBtn info={item[0]} />
       </main>}

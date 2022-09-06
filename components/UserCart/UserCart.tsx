@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
 import styles from "./UserCart.module.scss";
-
+import React, { useContext } from "react";
+import { useRouter } from "next/router";
 import { AppContext } from "../../context/app-state";
 
 const UserCart = () => {
+  const router = useRouter();
   const context = useContext(AppContext);
   const {
     user,
@@ -27,7 +28,8 @@ const UserCart = () => {
             setShowSignin(false);
             setShowCart(true);
             setCartPop(false);
-            setSigninPop(false);
+              setSigninPop(false);
+              router.push('/');
           }}
           className="fa-solid fa-cart-shopping"
         ></i>
