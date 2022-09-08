@@ -3,9 +3,7 @@ import { categorySlugs } from "../../helpers/variables";
 
 import Category from "../Category/Category";
 
-
 const HomeComp = () => {
-
   return (
     <div>
       {categorySlugs.map((slug) => (

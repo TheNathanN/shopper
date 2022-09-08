@@ -30,7 +30,7 @@ const Home: NextPage = () => {
     showSignin,
     showCart,
     cartPop,
-    signinPop
+    signinPop,
   } = context;
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       />
 
       {cartPop ? <CartPopup /> : signinPop && <SigninPopup />}
-      
+
       <section
         className={styles["mobile-pos"]}
         style={mobileMenu ? { height: "100%" } : { height: "10em" }}
@@ -62,13 +62,11 @@ const Home: NextPage = () => {
         {!mobileMenu ? <CategoryMenu /> : <MobileMenu />}
       </section>
 
-      {!mobileMenu && (
-        <main className={styles.main}>
-          {error && <ErrorComp />}
-          {loading && <Loading />}
-          {!showCart ? <HomeComp /> : <Cart />}
-        </main>
-      )}
+      <main className={styles.main}>
+        {error && <ErrorComp />}
+        {loading && <Loading />}
+        {!showCart ? <HomeComp /> : <Cart />}
+      </main>
 
       <footer className={styles.footer}></footer>
     </div>

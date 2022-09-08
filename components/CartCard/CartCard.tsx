@@ -25,11 +25,17 @@ const CartCard = ({ item, count }: Props) => {
 
   const clickHandler = () => {
     router.push(item.id);
-  }
+  };
 
   return (
     <div className={styles.container}>
-      <Image onClick={clickHandler} src={item.image.url} width={120} height={110} alt={item.name} />
+      <Image
+        onClick={clickHandler}
+        src={item.image.url}
+        width={120}
+        height={110}
+        alt={item.name}
+      />
       <div onClick={clickHandler} className={styles["details-container"]}>
         <p className={styles.name}>{item.name}</p>
         <p>${item.price.formatted}</p>
@@ -41,7 +47,9 @@ const CartCard = ({ item, count }: Props) => {
 
         <div className={styles["btn-container"]}>
           <button onClick={() => btnHandler("-")}>-</button>
-          <button onClick={() => btnHandler("+")}>+</button>
+          <button onClick={() => btnHandler("+")} role="increment">
+            +
+          </button>
         </div>
       </div>
     </div>
