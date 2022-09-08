@@ -1,8 +1,7 @@
 import "../styles/globals.scss";
-import type { AppProps } from "next/app";
 import AppState from "../context/app-state";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: any) {
   return (
     <AppState>
       <Component {...pageProps} />
