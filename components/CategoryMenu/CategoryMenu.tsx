@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
-
-import { AppContext } from "../../context/app-state";
-
 import styles from "./CategoryMenu.module.scss";
+import React, { useContext } from "react";
+import { AppContext } from "../../context/app-state";
 
 const CategoryMenu = () => {
   const context = useContext(AppContext);
   const { currentCategory, setMobileMenu } = context;
-  const formattedText = currentCategory.toUpperCase().replace('-', ' ');
+  const formattedText = currentCategory.toUpperCase().replace("-", " ");
 
   return (
     <section className={styles.container}>

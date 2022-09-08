@@ -24,7 +24,7 @@ const Nav = () => {
           setMobileMenu(false);
           setShowSignin(false);
           setShowCart(false);
-          router.push('/');
+          router.push("/");
         }}
       >
         <p className={styles.logo}>Audiophile</p>

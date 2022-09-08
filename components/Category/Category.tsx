@@ -13,6 +13,7 @@ interface Props {
 const Category = ({ slug }: Props) => {
   const context = useContext(AppContext);
   const { data, setCurrentCategory, currentCategory } = context;
+
   const [ref, isVisible] = useInView({
     threshold: 0.4,
   });

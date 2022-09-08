@@ -11,21 +11,11 @@ interface Props {
 const HeaderOptions = ({ modes, setSelected, selected }: Props) => {
   return (
     <div className={styles.container}>
-      {modes.map(text => (
+      {modes.map((text) => (
         <button
           onClick={() => setSelected(text)}
           key={text}
-          className={styles.btn}
-          style={
-            selected === text
-              ? {
-                  color: "#7E7A7A",
-                  textDecoration: "underline",
-                }
-              : {
-                  color: "black",
-                }
-          }
+          className={`${styles.btn} ${selected === text && styles.selected}`}
         >
           {text}
         </button>

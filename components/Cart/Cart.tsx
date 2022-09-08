@@ -16,12 +16,12 @@ const Cart = () => {
   useEffect(() => {
     if (cart) {
       const newCount = Object.values(cart).reduce(
-        (prev: any, current: any) => prev + current,
+        (prev: number, current: number) => prev + current,
         0
       );
       setCartCount(newCount);
     }
-    setCurrentCategory('cart');
+    setCurrentCategory("cart");
   }, [cart, cartCount, setCartCount, setCurrentCategory]);
 
   return (

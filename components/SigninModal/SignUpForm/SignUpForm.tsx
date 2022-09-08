@@ -1,7 +1,7 @@
+import styles from "./SignUp Form.module.scss";
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../../context/app-state";
 import { callPopup } from "../../../helpers/functions";
-import styles from "./SignUp Form.module.scss";
 
 interface FormData {
   name: string;
@@ -43,9 +43,12 @@ const SignUpForm = () => {
         id="name"
         value={formData.name}
         onChange={(e) => {
-          setFormData({
-            ...formData,
-            name: e.currentTarget.value,
+          setFormData((prev) => {
+            console.log(e);
+            return {
+              ...prev,
+              name: e.target.value,
+            };
           });
         }}
         required
@@ -58,9 +61,11 @@ const SignUpForm = () => {
         id="email"
         value={formData.email}
         onChange={(e) => {
-          setFormData({
-            ...formData,
-            email: e.currentTarget.value,
+          setFormData((prev) => {
+            return {
+              ...prev,
+              email: e.target.value,
+            };
           });
         }}
         required
@@ -73,9 +78,11 @@ const SignUpForm = () => {
         id="password"
         value={formData.password}
         onChange={(e) => {
-          setFormData({
-            ...formData,
-            password: e.currentTarget.value,
+          setFormData((prev) => {
+            return {
+              ...prev,
+              password: e.target.value,
+            };
           });
         }}
         required

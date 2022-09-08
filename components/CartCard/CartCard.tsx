@@ -17,9 +17,11 @@ const CartCard = ({ item, count }: Props) => {
 
   const btnHandler = (type: "-" | "+") => {
     if (cart)
-      setCart({
-        ...cart,
-        [item.id]: type === "-" ? cart[item.id] - 1 : cart[item.id] + 1,
+      setCart((prev) => {
+        return {
+          ...prev,
+          [item.id]: type === "-" ? cart[item.id] - 1 : cart[item.id] + 1,
+        };
       });
   };
 

@@ -16,21 +16,13 @@ const data = {
   count: 3,
 };
 
-describe("CartCard", () => {
+describe("CartCard Component", () => {
   const { item, count } = data;
 
-  it("should display the correct count", async () => {
+  it("should display the correct count, name and price", () => {
     render(<CartCard item={item} count={count} />);
     expect(screen.getByDisplayValue(3)).toBeInTheDocument();
-  });
-
-  it("should display the correct name", async () => {
-    render(<CartCard item={item} count={count} />);
     expect(screen.getByText("Test Product")).toBeInTheDocument();
-  });
-
-  it("should display the correct price", async () => {
-    render(<CartCard item={item} count={count} />);
     expect(screen.getByText("$1.00")).toBeInTheDocument();
   });
 });
