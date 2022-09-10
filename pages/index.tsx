@@ -65,7 +65,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         {error && <ErrorComp />}
         {loading && <Loading />}
-        {!showCart ? <HomeComp /> : <Cart />}
+        {!error && !loading ? !showCart ? <HomeComp /> : <Cart /> : ""}
       </main>
 
       <footer className={styles.footer}></footer>
